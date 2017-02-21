@@ -1,11 +1,11 @@
 import csv
-
+import os
 
 age_intercept = 23.2188604687
 gender_intercept = -0.06724152
 
 
-def load_age_lexica(file_name = "emnlp14age.csv"):
+def load_age_lexica(file_name = os.path.dirname(os.path.abspath(__file__))  + "/emnlp14age.csv"):
 	age_lexica = {}
 	with open(file_name, mode='r') as infile:
 	    reader = csv.DictReader(infile)
@@ -18,7 +18,7 @@ def load_age_lexica(file_name = "emnlp14age.csv"):
 	return age_lexica
 
 
-def load_gender_lexica(file_name = "emnlp14gender.csv"):
+def load_gender_lexica(file_name = os.path.dirname(os.path.abspath(__file__)) + "/emnlp14gender.csv"):
 	gender_lexica = {}
 	with open(file_name, mode='r') as infile:
 	    reader = csv.DictReader(infile)
